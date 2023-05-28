@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 1).
+<script>
+const userInput = parseInt(prompt("Please enter a positive number between 50 and 100:"));
+
+if (isNaN(userInput) || userInput < 50 || userInput > 100) {
+  console.log("Invalid input. Please enter a positive number between 50 and 100.");
+} else {
+  let sum = 0;
+  let count = 0;
+
+  for (let i = 1; i <= userInput; i++) {
+    if (userInput % i === 0) {
+      sum += i;
+      count++;
+    }
+  }
+
+  const mean = sum / count;
+
+  console.log("Arithmetic mean of the divisors:", mean);
+}
+
+</script> -->
+
+
+<!-- 2).
+<script>
+const userInput1 = parseInt(prompt("Enter the first number between 70 and 140:"));
+const userInput2 = parseInt(prompt("Enter the second number between 70 and 140:"));
+const userInput3 = parseInt(prompt("Enter the third number between 70 and 140:"));
+
+const isValidInput = (num) => !isNaN(num) && num >= 70 && num <= 140;
+
+if (!isValidInput(userInput1) || !isValidInput(userInput2) || !isValidInput(userInput3)) {
+  console.log("Invalid input. Please enter three numbers between 70 and 140.");
+} else {
+  const countDivisors = (number) => {
+    let count = 0;
+    for (let i = 1; i <= number; i++) {
+      if (number % i === 0) {
+        count++;
+      }
+    }
+    return count;
+  };
+
+  const divisorsCount1 = countDivisors(userInput1);
+  const divisorsCount2 = countDivisors(userInput2);
+  const divisorsCount3 = countDivisors(userInput3);
+
+  let numberWithMostDivisors = userInput1;
+  let maxDivisors = divisorsCount1;
+
+  if (divisorsCount2 > maxDivisors) {
+    numberWithMostDivisors = userInput2;
+    maxDivisors = divisorsCount2;
+  }
+
+  if (divisorsCount3 > maxDivisors) {
+    numberWithMostDivisors = userInput3;
+    maxDivisors = divisorsCount3;
+  }
+
+  console.log("Number with the most divisors:", numberWithMostDivisors);
+}
+
+</script> -->
+
+
+<!-- 3).
+<script>
+let count = 0;
+let result = 1;
+
+for (let i = 10; i <= 180; i++) {
+  if (i % 3 === 0 || i % 5 === 0) {
+    count++;
+    result *= i;
+  }
+}
+
+console.log("Count of multiples of 3 or 5:", count);
+console.log("Result of multiplication:", result);
+
+</script> -->
+
+<!-- 4).
+<script>
+const userInput1 = parseFloat(prompt("Enter the first number:"));
+const userInput2 = parseFloat(prompt("Enter the second number:"));
+const userInput3 = parseFloat(prompt("Enter the third number:"));
+const userInput4 = parseFloat(prompt("Enter the fourth number:"));
+
+const isValidInput = (num) => !isNaN(num);
+
+if (!isValidInput(userInput1) || !isValidInput(userInput2) || !isValidInput(userInput3) || !isValidInput(userInput4)) {
+  console.log("Invalid input. Please enter numeric values.");
+} else {
+  let largestNumber = userInput1;
+
+  if (userInput2 > largestNumber) {
+    largestNumber = userInput2;
+  }
+
+  if (userInput3 > largestNumber) {
+    largestNumber = userInput3;
+  }
+
+  if (userInput4 > largestNumber) {
+    largestNumber = userInput4;
+  }
+
+  console.log("The largest number is:", largestNumber);
+}
+
+</script> -->
+
+
+
+<!-- 5).
+<script>
+const firstName = prompt("Enter your first name:");
+const lastName = prompt("Enter your last name:");
+const email = prompt("Enter your email address:");
+const image = prompt("Enter the image address:");
+
+const htmlString = `
+  <div class="card">
+    <img src="${image}" alt="Profile Picture">
+    <div class="details">
+      <h2>${firstName} ${lastName}</h2>
+      <p>Email: ${email}</p>
+    </div>
+  </div>
+`;
+
+document.body.innerHTML = htmlString;
+
+</script> -->
+
+<!-- 6).
+<script>
+const a = 3;
+const b = 2;
+const c = -5;
+
+const discriminant = b ** 2 - 4 * a * c;
+
+if (discriminant > 0) {
+  const x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+  const x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+
+  console.log("x1 =", x1);
+  console.log("x2 =", x2);
+} else if (discriminant === 0) {
+  // One real root
+  const x = -b / (2 * a);
+
+  console.log("x =", x);
+} else {
+  // No real roots
+  console.log("No real roots exist.");
+}
+</script> -->
+
+<!-- 7).
+<script>
+const side1 = parseFloat(prompt("Enter the length of side 1:"));
+const side2 = parseFloat(prompt("Enter the length of side 2:"));
+
+const isValidInput = (num) => !isNaN(num) && num > 0;
+
+if (!isValidInput(side1) || !isValidInput(side2)) {
+  console.log("Invalid input. Please enter positive numeric values.");
+} else {
+  const hypotenuse = Math.sqrt(side1 ** 2 + side2 ** 2);
+
+  console.log("Length of the hypotenuse:", hypotenuse);
+}
+</script> -->
+
+<!-- 8).
+<script>
+const number = parseInt(prompt("Enter a number from 0 to 200:"));
+
+const isValidInput = (num) => !isNaN(num) && num >= 0 && num <= 200;
+
+if (!isValidInput(number)) {
+  console.log("Invalid input. Please enter a number from 0 to 200.");
+} else {
+  let isPrime = true;
+
+  if (number === 0 || number === 1) {
+    isPrime = false;
+  } else {
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+      if (number % i === 0) {
+        isPrime = false;
+        break;
+      }
+    }
+  }
+
+  if (isPrime) {
+    console.log(number, "is a prime number.");
+  } else if (number === 0 || number === 1) {
+    console.log(number, "is neither prime nor composite.");
+  } else {
+    console.log(number, "is a composite number.");
+  }
+}
+
+</script> -->
+
+
+<!-- 9).
+<script>
+const name = prompt("Enter your name:");
+const surname = prompt("Enter your surname:");
+const age = parseInt(prompt("Enter your age:"));
+const email = prompt("Enter your email:");
+
+const isValidInput = (input) => input !== null && input.trim() !== "";
+
+if (!isValidInput(name) || !isValidInput(surname) || isNaN(age) || !isValidInput(email)) {
+  console.log("Invalid input. Please enter valid information.");
+} else {
+  const message = `Hello, I am ${name} ${surname}. I am ${age} years old, and my email is "${email}".`;
+
+  console.log(message);
+}
+
+</script> -->
+
+
+<!-- 10).
+<script>
+function isPrime(number) {
+  if (number < 2) {
+    return false;
+  }
+  
+  for (let i = 2; i <= Math.sqrt(number); i++) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  
+  return true;
+}
+
+for (let i = 10; i <= 90; i++) {
+  if (isPrime(i)) {
+    console.log(i);
+  }
+}
+</script> -->
+
+
+<!-- 11).
+<script>
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getRandomColor() {
+  const r = getRandomNumber(0, 255);
+  const g = getRandomNumber(0, 255);
+  const b = getRandomNumber(0, 255);
+  return `rgb(${r},${g},${b})`;
+}
+
+for (let i = 0; i < 10; i++) {
+  const randomColor = getRandomColor();
+  console.log(randomColor);
+}
+
+</script> -->
+
+
+
+<script>
+    var rows = 5;
+    for (let i = rows; i >= 1; i--) {
+        for (let j = i; j => 1; j--) {
+            document.write("*");
+        }
+        document.write("<br>")
+    }
+</script>
+</body>
+</html>
