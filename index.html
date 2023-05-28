@@ -287,15 +287,154 @@ for (let i = 0; i < 10; i++) {
 </script> -->
 
 
-
+<!-- 12).
 <script>
-    var rows = 5;
+    var rows = 8;
     for (let i = rows; i >= 1; i--) {
         for (let j = i; j => 1; j--) {
             document.write("*");
         }
         document.write("<br>")
     }
-</script>
+</script> -->
+
+<!-- 13).
+<script>
+  function buildUpsideDownPyramid(height) {
+  for (let i = height; i > 0; i--) {
+    let row = '';
+    row += ' '.repeat(height - i);
+    row += '*'.repeat(2 * i - 1);
+    console.log(row);
+  }
+}
+
+const pyramidHeight = 10;
+buildUpsideDownPyramid(pyramidHeight);
+
+</script> -->
+
+<!-- 14).
+<script>
+function generateEvenNumbers() {
+  const iterations = parseInt(prompt("Enter the number of iterations:"));
+
+  if (isNaN(iterations)) {
+    console.log("Invalid input. Please enter a number.");
+    return;
+  }
+
+  let evenNumbers = [];
+  let sum = 0;
+
+  for (let i = 0; i < iterations; i++) {
+    const randomNumber = Math.floor(Math.random() * (371 - 135 + 1)) + 135;
+
+    if (randomNumber % 2 === 0) {
+      evenNumbers.push(randomNumber);
+      sum += randomNumber;
+    }
+  }
+
+  console.log("Even numbers generated:", evenNumbers);
+
+  if (evenNumbers.length === 0) {
+    console.log("No even numbers were generated.");
+  } else {
+    const mean = sum / evenNumbers.length;
+    console.log("Arithmetic mean of even numbers:", mean);
+  }
+}
+
+generateEvenNumbers();
+
+</script> -->
+
+
+<!-- 15).
+<script>
+  function printSnowflakeTriangle() {
+  const snowflakesOnSide = parseInt(prompt("Enter the number of snowflakes on one side of the triangle:"));
+
+  if (isNaN(snowflakesOnSide)) {
+    console.log("Invalid input. Please enter a number.");
+    return;
+  }
+
+  for (let i = 1; i <= snowflakesOnSide; i++) {
+    let row = '';
+
+    row += ' '.repeat(snowflakesOnSide - i);
+
+    row += '*'.repeat(i * 2 - 1);
+
+    console.log(row);
+  }
+}
+
+printSnowflakeTriangle();
+
+</script> -->
+
+
+<!-- 16).
+<script>
+var userAmount = Number(prompt("Enter your amount"));
+var text = "";
+
+for (; userAmount >= 100;) {
+    text += 100 + "₾ ";
+    userAmount -= 100;
+}
+
+for (; userAmount >= 50;) {
+    text += 50 + "₾ ";
+    userAmount -= 50;
+}
+
+for (; userAmount >= 20;) {
+    text += 20 + "₾ ";
+    userAmount -= 20;
+}
+
+for (; userAmount >= 10;) {
+    text += 10 + "₾ ";
+    userAmount -= 10;
+}
+
+for (; userAmount >= 5;) {
+    text += 5 + "₾ ";
+    userAmount -= 5;
+}
+
+console.log(text);
+</script> -->
+
+<!-- 17).
+<script>
+function convertCurrency(amount, currencyType) {
+  const exchangeRates = {
+    dollars: 0.39,   
+    rubles: 28.89,   
+    pounds: 0.31     
+  };
+
+  if (!exchangeRates.hasOwnProperty(currencyType)) {
+    console.log("Invalid currency type.");
+    return;
+  }
+
+  const convertedAmount = amount * exchangeRates[currencyType];
+  return convertedAmount;
+}
+
+const amountInGEL = 100;
+const currencyType = 'dollars';
+const convertedAmount = convertCurrency(amountInGEL, currencyType);
+
+if (convertedAmount !== undefined) {
+  console.log(`Converted amount: ${convertedAmount} ${currencyType.toUpperCase()}`);
+}
+</script> -->
 </body>
 </html>
